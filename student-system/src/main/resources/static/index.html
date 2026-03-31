@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生综合信息平台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <header class="app-header">
+        <h1>学生综合信息平台</h1>
+    </header>
+
+    <nav class="tab-nav">
+        <button class="tab-item active" data-target="info">个人资料</button>
+        <button class="tab-item" data-target="schedule">课表查询</button>
+        <button class="tab-item" data-target="score">成绩查询</button>
+    </nav>
+
+    <main class="content-area">
+        <!-- 个人资料 -->
+        <section class="tab-panel active" id="info">
+            <div class="info-card">
+                <div class="avatar-container">
+                    <img src="touxiang.jpg" alt="头像" class="avatar">
+                </div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">姓名：</span>
+                        <span class="info-value" id="userName"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">年龄：</span>
+                        <span class="info-value" id="userAge"></span>岁
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">年级：</span>
+                        <span class="info-value" id="userGrade"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">专业：</span>
+                        <span class="info-value" id="userMajor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 课表：节次列留白 -->
+        <section class="tab-panel" id="schedule">
+            <div class="week-select-wrapper">
+                <label for="weekSelect">选择周次：</label>
+                <select id="weekSelect" class="week-select">
+                    <option value="1">第1周</option>
+                    <option value="2">第2周</option>
+                    <option value="3">第3周</option>
+                    <option value="4">第4周</option>
+                    <option value="5">第5周</option>
+                </select>
+            </div>
+            <table class="schedule-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>周一</th>
+                    <th>周二</th>
+                    <th>周三</th>
+                    <th>周四</th>
+                    <th>周五</th>
+                    <th>周六</th>
+                    <th>周日</th>
+                </tr>
+                </thead>
+                <tbody id="scheduleBody"></tbody>
+            </table>
+        </section>
+
+        <!-- 成绩：不及格标红 -->
+        <section class="tab-panel" id="score">
+            <table class="score-table">
+                <thead>
+                <tr>
+                    <th>课程名称</th>
+                    <th>考试分数</th>
+                </tr>
+                </thead>
+                <tbody id="scoreBody"></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
